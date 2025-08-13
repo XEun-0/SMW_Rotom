@@ -8,10 +8,11 @@
 #include "watchController.h"
 #include "tester.h"
 
-TouchscreenTester tester;
-
-
 #define ENABLE_TESTER 1
+
+#ifdef ENABLE_TESTER
+TouchscreenTester tester;
+#endif
 
 // Touchscreen coordinates: (x, y) and pressure (z)
 int x, y, z;
@@ -72,7 +73,7 @@ void setup() {
     );
     
     gDisplayRuntime.DisplayRuntimeTaskLauncher();
-
+    gTouchRuntime.TouchRuntimeTaskLauncher();
     vTaskStartScheduler();
 #endif
 }

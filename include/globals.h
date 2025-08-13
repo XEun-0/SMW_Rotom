@@ -15,18 +15,14 @@
 
 // Forward declarations
 class DisplayRuntime;
-class ToyuchRuntime;
+class TouchRuntime;
 
 #ifdef DECLARE_GLOBALS
-
 extern DisplayRuntime   gDisplayRuntime;
 extern TouchRuntime     gTouchRuntime;
-
 #else
-
 DisplayRuntime  gDisplayRuntime;
 TouchRuntime    gTouchRuntime;
-
 #endif
 
 #endif  // GLOBALS_H

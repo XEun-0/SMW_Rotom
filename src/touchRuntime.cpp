@@ -36,16 +36,15 @@ void TouchRuntime::mainLoop(void) {
 
         delay(50);
     }
-}
 
-/*********************************************************
- * 
- * Name:  TouchRuntimeTaskLauncher
- * Notes: ...
- * 
- *********************************************************/
-void TouchRuntime::TouchRuntimeTaskLauncher() {
+    init();
 
+    while(1) {
+        // Do whatever
+    }
+
+    // Send error code serial msg if needed.
+    vTaskDelete( NULL );
 }
 
 /*********************************************************
@@ -81,10 +80,32 @@ void TouchRuntime::init(void) {
 
 /*********************************************************
  * 
+ * Name:  TouchRuntimeTaskLauncher
+ * Notes: ...
+ * 
+ *********************************************************/
+void TouchRuntime::TouchRuntimeTaskLauncher() {
+    xTaskCreate(
+        processTouchRuntimeTask,           // Function to be called
+        "processTouchRuntimeTask",         // Name of the task
+        512,                            // Stack size
+        this,                           // Parameters passed to task
+        2,                              // Task priority (higher number = higher priority)
+        NULL                            // Task handle for reference
+    );
+}
+
+/*********************************************************
+ * 
  * Name:  processTouchRuntimeTask
  * Notes: create static instance if it doesn't exist
  * 
  *********************************************************/
 void TouchRuntime::processTouchRuntimeTask( void *pvParams ) {
+    // Retrieve the singleton instance of the TouchRuntime class.
+    // This ensures that only one instance of TouchRuntime exists 
+    // and is used throughout the program.
 
+    TouchRuntime *pTouchRuntime = static_cast<TouchRuntime *>(pvParams);
+    pTouchRuntime->mainLoop();
 }

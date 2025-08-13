@@ -2,6 +2,7 @@
 #define WATCH_OS_RUNTIME
 
 #include <Arduino.h>
+
 #include "Hardware/displayRuntime.h"
 #include "globals.h"
 

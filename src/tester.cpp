@@ -1,8 +1,9 @@
-#include "tester.h"
 #include <Arduino.h>
 #include <TFT_eSPI.h>
 #include <XPT2046_Touchscreen.h>
 #include <SPI.h>
+
+#include "tester.h"
 
 // These are declared elsewhere and linked in (globals or runtime files)
 extern TFT_eSPI tft;
