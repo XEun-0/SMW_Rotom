@@ -31,3 +31,4 @@ powershell.exe -command $POWERSHELL_SCRIPT -Verb runAs
 # Verify device forwarding
 echo -e "$(tput bold)Verifying forwarded device...$(tput sgr0)"
 ls /dev/ttyUSB*
+ls /dev/ttyACM*

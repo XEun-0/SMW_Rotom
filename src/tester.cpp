@@ -41,7 +41,7 @@ void TouchscreenTester::loop() {
         printTouchToSerial(x, y, z);
         printTouchToDisplay(x, y, z);
 
-        delay(100);
+        delay(20);
     }
 }
 

@@ -25,8 +25,8 @@
 #define XPT2046_CLK 	25   	// T_CLK
 #define XPT2046_CS 		33    	// T_CS
 
-#define SCREEN_WIDTH    320     // Width in pixels
-#define SCREEN_HEIGHT   240     // Height in pixels
+#define SCREEN_WIDTH    240     // Width in pixels
+#define SCREEN_HEIGHT   320     // Height in pixels
 #define FONT_SIZE       2       // Font size
 
 // TFT and touchscreen externals

@@ -1,0 +1,8 @@
+To build the tester2 platform
+
+platformio run -e tester2 -t upload -t monitor
+
+To build the regular platform
+
+# Upload and monitor with default env (esp32dev)
+platformio run -e esp32dev -t upload -t monitor
